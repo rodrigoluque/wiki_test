@@ -1,0 +1,34 @@
+---
+title: Generador de etiquetas
+description: 
+published: true
+date: 2021-09-03T15:16:11.152Z
+tags: 
+editor: markdown
+dateCreated: 2021-09-01T13:40:34.362Z
+---
+
+# Via 1
+
+asasdasd
+codigo
+<code class="codigo">Status code: 200 OK
+{
+    "error":false,
+    "data": {
+        "tracking": "xxxxxxxxxxxxxxxxxxxxxxxxx",
+        "format": "pdf",
+        "label": "data:image\/pdf;base64,JVBERi0xLjUNJeLjz9MNCjEgMCBvYmoNPDwvTWV0YWRhdGEgMiAwIFIvT0NQcm9wZXJ0aWVzPDwvRDw8L09OWzcgMCBSIDQyIDAgUiA3OCAwIFIgMTE0IDAgUiAxNTAgMCBSIDE4NiAwIFIgMjIyIDAgUiAyNTggMCBSXS9PcmRlciAyNTkgMCBSL1JCR3JvdXBzW10+Pi9PQ0dzWzcgMCBSIDQyIDAgUiA3OCAwIFIgMTE0IDAgUiAxNTAgMCBSIDE4NiAwIFIgMjIyIDAgUiAyNTggMCBSXT4+L1BhZ2VzIDMgMCBSL1R5cGUvQ2F0YWxvZz4+DWVuZG9iag0yIDAgb2JqDTw8L0xlbmd0aCA1NTQyOC9TdWJ0eXBlL1hNTC9UeXBlL01ldGFkYXRhPj5zdHJlYW0NCjw\/eHBhY2tldCBiZWdpbj0i77u\/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj4KICAgICAgICAgPGRjOmZvcm1hdD5hcHBsaWNhdGlvbi9wZGY8L2RjOmZvcm1hdD4KICAgICAgICAgPGRjOnRpdGxlPgogICAgICAgICAgICA8cmRmOkFsdD4KICAgICAgICAgICAgICAgPHJkZjpsaSB4bWw6bGFuZz0ieC1kZWZhdWx0Ij50ZW1wbGF0ZSBjaGlsZTwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpBbHQ+CiAgICAgICAgIDwvZGM6dGl0bGU+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnhtcEdJbWc9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9nL (...)"
+    }
+}
+</code>
+
+
+
+
+# Via 2
+
+asdasdasd
+
+# Via 3
+asdasdasdas

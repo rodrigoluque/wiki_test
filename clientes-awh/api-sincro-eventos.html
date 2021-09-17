@@ -1,0 +1,232 @@
+<!--
+title: NewsLetterEvents&SubEvents- API
+description: 
+published: true
+date: 2021-09-09T20:25:42.689Z
+tags: 
+editor: ckeditor
+dateCreated: 2021-09-09T17:36:26.280Z
+-->
+
+<h1><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Goal</span></h1>
+<p><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">The reason is to inform the changes on the API to consult the events of packages in our systems.</span></p>
+<h1><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">General Description</span></h1>
+<p><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">The following document shows the properties of the new API to use and a new sub-event who shows more details of the state of the package&nbsp;</span></p>
+<h2><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Properties of new API:</span></h2>
+<p><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">The new API has a new structure much simpler:</span></p>
+<ul>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">The new API returns all the events and sub-events of the package that you are consulting</span></li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">The new API only returns information of events and sub-events</span></li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">The new API allows consulting for more than one tracking number or sales order number at the same time</span></li>
+</ul>
+<h2><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Response fields:</span></h2>
+<p><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">This is a new structure of the Response:</span></p>
+<p><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Fields:</span></p>
+<ul>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">tracking: Package tracking number,</span></li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">origin: Package origin country,</span></li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">destination": Package destination country,</span></li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">state: State of packages destination country,</span></li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">events:&nbsp; List of events "</span></li>
+</ul>
+<pre><code class="language-plaintext">[
+Date: date of event
+Code: code of event. This code is unique
+Description: Description of sub-event. This field will shows a more specific information of the state of the package
+Description_alt: Detailed description of event 
+Category: Category of the event
+Received_by: Information of person that received the package 
+Office: office where is the package
+City: City where is the package
+]</code></pre>
+<p><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">"</span></p>
+<ul>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Field example:</span></li>
+</ul>
+<pre><code class="language-plaintext">{
+ &nbsp;&nbsp;&nbsp;"data":&nbsp;[
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tracking":&nbsp;"MMXQP002594973E",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"origin":&nbsp;"China",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"destination":&nbsp;"Mexico",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"state":&nbsp;"Aguascalientes",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"events":&nbsp;[
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"date":&nbsp;"2021-06-01T16:32:54+08:00",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"category_es":&nbsp;"Orden&nbsp;creada",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"category":&nbsp;"Order&nbsp;created",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code":&nbsp;"OC-1",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"description":&nbsp;"Label&nbsp;generated",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"description_es":&nbsp;"Etiqueta&nbsp;impresa",
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"description_alt":&nbsp;“Etiqueta generada”,
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"received_by":&nbsp;“Marcos Nelson”,
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"office":&nbsp;“Carrasco 12987 2do Piso”,
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"city":&nbsp;“Tijuana”
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+ &nbsp;&nbsp;&nbsp;]</code></pre>
+<p><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">&nbsp; <strong>*After this response there is some metadata info.</strong></span></p>
+<ul>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Event and Sub-Events:</span></li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Attached file with the new and unique events with the sub-events</span></li>
+</ul>
+<p><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">&nbsp;&nbsp;&nbsp; &nbsp;</span></p>
+<figure class="image image_resized" style="width:102px;"><img src="https://lh3.googleusercontent.com/Poye4NjX_F05N3oTG1yqCWsiubgVdUPTItqqeQMvy5ay2ZBDkGu63uYLA5P5Nfn0Dn7JE5jMykGsD9DpDMKW2F4HNZRigS8m3jMM0OX6-msX-zVc01-9Vr58G5bB_JM_jo7Tlkc=s0"></figure>
+<ul>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Example of use the API for a one tracking number&nbsp;</span>
+    <ul>
+      <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">URL:</span>
+        <ul>
+          <li><a href="http://tracking.mailamericas.com/api/v2/events?tracking=tracking_number&amp;access_token=access_token"><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;"><u>http://tracking.mailamericas.com/api/</u><strong><u>v2</u></strong><u>/events?tracking=</u><strong><u>tracking_number</u></strong><u>&amp;access_token=</u><strong><u>access_token</u></strong></span></a></li>
+        </ul>
+      </li>
+      <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Response:</span></li>
+    </ul>
+  </li>
+</ul>
+<figure class="image image_resized" style="width:102px;"><img src="https://lh4.googleusercontent.com/lPxVZlD7KFqLKZRyn920VcHCtinguhlmII-uQ-MQf1qNUSiqAcWYJUdD9muleICTdYruUXUyd5vKxfMlEbB-hZnWoq1YFQQMxcTjqgRgPrk_03uk92rxlcF1bgc60LB8iVZ0B3o=s0"></figure>
+<ul>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Example of using the API for more than one tracking number</span>
+    <ul>
+      <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">URL:</span>
+        <ul>
+          <li><a href="http://tracking.mailamericas.com/api/v2/events?tracking=tracking_number_1,tracking_number_2,tracking_number_3,tracking_number_X&amp;access_token=access_token"><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;"><u>http://tracking.mailamericas.com/api/</u><strong><u>v2</u></strong><u>/events?tracking=</u><strong><u>tracking_number_1,tracking_number_2,tracking_number_3,tracking_number_X</u></strong><u>&amp;access_token=</u><strong><u>access_token</u></strong></span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Example of use the API for a one sales order number&nbsp;</span>
+    <ul>
+      <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">URL:</span>
+        <ul>
+          <li><a href="http://tracking.mailamericas.com/api/v2/events?%20sales_order_number=%20sales%20order%20number&amp;access_token=access_token"><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;"><u>http://tracking.mailamericas.com/api/</u><strong><u>v2</u></strong><u>/events? sales_order_number= </u><strong><u>sales order number</u></strong><u>&amp;access_token=</u><strong><u>access_token</u></strong></span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">Example of using the API for more than one sales order number</span>
+    <ul>
+      <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">URL:</span>
+        <ul>
+          <li><a href="http://tracking.mailamericas.com/api/v2/events?tracking=tracking_number_1,tracking_number_2,tracking_number_3,tracking_number_X&amp;access_token=access_token"><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;"><u>http://tracking.mailamericas.com/api/</u><strong><u>v2</u></strong><u>/events?</u> <u>sales_order_number=</u> <strong><u>sales order number _1,</u></strong> <strong><u>sales order number _2,</u></strong> <strong><u>sales order number _3,</u></strong> <strong><u>sales order number _X</u></strong><u>&amp;access_token=</u><strong><u>access_token</u></strong></span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;"><strong>NOTE:</strong></span>
+    <ul>
+      <li><span style="font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;"><strong>The API always returns the descriptions in ENGLISH, except for the "description_alt" field which is sent in the same language in which it is received from our suppliers</strong></span></li>
+    </ul>
+  </li>
+</ul>
+<h1>Events Tracking</h1>
+<h2>Events</h2>
+<p>GET https://tracking.mailamericas.com/api/v2/events</p>
+<figure class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Param</th>
+        <th>Mandatory</th>
+        <th>Data Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tracking</td>
+        <td>yes</td>
+        <td>int</td>
+        <td>number tracking</td>
+      </tr>
+      <tr>
+        <td>Access Token</td>
+        <td>yes</td>
+        <td>string</td>
+        <td>key authtentication</td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p>QUERY PARAMS tracking , access_token</p>
+<p>Example Request:</p>
+<p>https://tracking.mailamericas.com/api/v2/events?tracking=5330069849678130013201131010&amp;access_token=ML5Y5UEKP82E4PFLCCR8</p>
+<pre><code class="language-plaintext">{
+    "data": [
+        {
+            "tracking": "5330069849678130013201131010",
+            "origin": "China",
+            "destination": "Chile",
+            "state": "RM (Metropolitana)",
+            "events": [
+                {
+                    "date": "2021-09-07T00:00:06+08:00",
+                    "category_es": "Orden creada",
+                    "category": "Order created",
+                    "code": "OC-1",
+                    "description": "Label generated",
+                    "description_es": "Etiqueta impresa",
+                    "description_pt": "Etiqueta impressa",
+                    "description_alt": null,
+                    "received_by": null,
+                    "office": null,
+                    "city": null
+                },
+                {
+                    "date": "2021-09-07T19:31:25+08:00",
+                    "category_es": "Almac\u00e9n de origen",
+                    "category": "Origin warehouse",
+                    "code": "WH-3",
+                    "description": "Processed",
+                    "description_es": "Procesado",
+                    "description_pt": "Processado",
+                    "description_alt": null,
+                    "received_by": null,
+                    "office": null,
+                    "city": "DGM"
+                },
+                {
+                    "date": "2021-09-07T19:36:39+08:00",
+                    "category_es": "Almac\u00e9n de origen",
+                    "category": "Origin warehouse",
+                    "code": "WH-1",
+                    "description": "Received at Origin Warehouse",
+                    "description_es": "Recibido en Warehouse de Origen",
+                    "description_pt": "Recebido",
+                    "description_alt": null,
+                    "received_by": null,
+                    "office": null,
+                    "city": null
+                },
+                {
+                    "date": "2021-09-08T06:00:00+08:00",
+                    "category_es": "Tr\u00e1nsito a pa\u00eds destino",
+                    "category": "In transit to destination country",
+                    "code": "TD-1",
+                    "description": "In transit to the airport",
+                    "description_es": "Camino al aeropuerto",
+                    "description_pt": "A caminho do aeroporto",
+                    "description_alt": "Truck departed to the airport",
+                    "received_by": null,
+                    "office": null,
+                    "city": null
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "error": false,
+        "code": 200,
+        "pagination": {
+            "total": 1,
+            "count": 1,
+            "per_page": 100,
+            "current_page": 1,
+            "total_pages": 1,
+            "links": {}
+        }
+    }
+}
+</code></pre>
+<p>&nbsp;</p>
